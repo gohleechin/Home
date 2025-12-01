@@ -1,0 +1,184 @@
+*{
+    border: solid red 1px;
+    margin:0px;
+    padding:0px;
+}
+
+.LanguageSelector{
+    font-size: 1em;
+    color: blanchedalmond;
+}   
+.LanguageSelector>a{
+    font-size: 1.2em;
+    color: blanchedalmond;
+}   
+#chinese{
+    font-family: "LiuFont";
+    font-size: 1.2em;
+    color: blanchedalmond;
+}
+
+/* preloader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; /* or #f0f0f0 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #0066ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Header{
+    height: 100px;
+    background-color: #1B5CDE;
+    padding:10px;
+}
+
+.Header>h1{
+    font-family: "Lobster";
+    color: blanchedalmond;
+}
+
+/*Nav Bar*/
+.menu-toggle {
+    height: 50px;
+    background-color: #7477F9;
+    padding-left: 10px;
+    line-height: 45px; /* To align center suppose to be 50px*/
+
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    
+}
+
+.Nav-links{
+    height: 50px;
+    background-color: #7477F9;
+    padding-left: 10px;
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+
+.Nav-links .NavItem{
+    width:100px;
+    background-color: #1B99DE;
+    text-align: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.0em;
+    text-decoration: none;
+    color: #FFFFF0; 
+}
+
+.Nav-links .NavItem:hover{
+    background-color: #1BDEA3;
+    color: white;
+    cursor: grab;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* show hamburger */
+    }
+
+    .Nav-links {
+        display: none; /* hide menu initially */
+        flex-direction: column;
+        background-color: blue;
+        position: absolute;
+        top: 100%; /* below navbar */
+        left: 0;
+        width: 100%;
+    }
+
+    .Nav-links a {
+        padding: 10px;
+        border-top: 1px solid lightgreen;
+    }
+
+    .Nav-links.show {
+        display: flex; /* show menu when toggled */
+    }
+}
+
+/*Bread Crumb Bar*/
+.Breadcrumb{
+    height: 30px;
+    background-color: lightgray;
+}
+
+.MainContent{
+    height: 400px;
+    background-color: #FAF9F6;
+    color:black;
+
+    flex:1; /*push footer to bottom*/
+
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    /* white-space: nowrap; */
+}
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+.item{
+    text-align: center;
+    min-width: 300px;
+    height:300px;
+    background: lightblue;
+    border-radius: 5px;
+}
+
+#toggleButton{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #1B5CDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Footer{
+    text-align: center;
+    height: 50px;
+    background-color: #65B3DE;
+}

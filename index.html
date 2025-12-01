@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="preloader">
+        <div class="spinner"><h6>spin</h6></div>
+    </section>
+
+    <div class="Header">
+        <h1>Welcome to My Personal Webpage</h1>
+        <div class="LanguageSelector"> LANGUAGE:
+            <a href="index_en.html">English</a> |
+            <a id="chinese" href="index_cn.html">中文</a>
+        </div>
+    </div>
+
+    <div class="NavBar">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <div class="Nav-links" id="nav-links">
+            <a class="NavItem" href="index.html">Home</a>
+            <a class="NavItem" href="about.html">About Me</a>
+            <a class="NavItem" href="services.html">Services</a>
+            <a class="NavItem" href="contact.html">Contact</a>
+            </div>
+    </div>
+    <div class="Breadcrumb"></div>
+    <section class="MainContent">
+        <div class="scroll-container">
+            <div class="item">Box 1</div>
+            <div class="item">Box 2</div>
+            <div class="item">Box 3</div>
+            <div class="item">Box 4</div>
+            <div class="item">Box 5</div>
+        </div>
+
+        <button id="toggleButton">OFF</button>
+        <div id="toggleContent" style="display:none; margin-top:10px;">
+            <p>This content is toggled by the button above.</p>
+        </div>
+
+        <!-- WhatsApp Click-to-Chat Button -->
+        <div id="whatsapp-button" style="position:fixed; bottom:10px; right:20px;">
+            <button style="background-color:#25D366; color:white; padding:12px 20px; 
+            border:none; border-radius:50px; font-weight:bold; cursor:pointer; 
+            box-shadow:0 4px 6px rgba(0,0,0,0.2);">WhatsApp Chat
+            </button>
+        </div>
+    </section>
+    <section class="Footer">
+        <p>© 2025 My Personal Website. All rights reserved.</p>
+    </section>
+
+<script>
+// Preloader functionality
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    //preloader.style.opacity = "0";
+        // optional fade out
+    setTimeout(() => {preloader.style.display = "none";
+    }, 500);  
+});
+
+// Responsive navigation menu toggle
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+
+// Toggle button functionality
+const toggleButton = document.getElementById("toggleButton");
+const Content = document.getElementById("toggleContent");
+
+toggleButton.addEventListener("keydown", (event) => {
+    
+    if(event.key ==="Enter"){
+    alert("Enter key pressed");
+    if (Content.style.display === "none") {
+        Content.style.display = "block";
+        toggleButton.textContent = "ON";
+    } else {
+        Content.style.display = "none";
+        toggleButton.textContent = "OFF";
+    }
+}
+
+});
+
+// WhatsApp Click-to-Chat functionality
+const phoneNumber = "90519888"; // Your phone number
+const defaultMessage = "Hi! I'm interested in your leather products.";
+
+document.getElementById("whatsapp-button").onclick = function() {
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`, '_blank');
+};
+</script>
+</body>
+</html>

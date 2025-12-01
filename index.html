@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Webpage</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="Header">
+        <h1>Welcome to My Personal Webpage</h1>
+        <div class="LanguageSelector"> LANGUAGE:
+            <a href="index_en.html">English</a> |
+            <a id="chinese" href="index_cn.html">中文</a>
+        </div>
+    </div>
+
+    <div class="NavBar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="Nav-links" id="nav-links">
+        <a class="NavItem" href="index.html">Home</a>
+        <a class="NavItem" href="about.html">About Me</a>
+        <a class="NavItem" href="services.html">Services</a>
+        <a class="NavItem" href="contact.html">Contact</a>
+    </div>
+    </div>
+    <div class="Breadcrumb"></div>
+    <div class="MainContent"></div>
+    <div class="Footer">
+        <p>© 2025 My Personal Website</p>
+    </div>
+
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});
+</script>
+</body>
+</html>

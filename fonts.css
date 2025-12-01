@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "LiuFont";                /* Name you’ll use in font-family */
+    src: url("fonts/LiuFont.ttf") format("truetype");  /* Path to your font file */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Magnific";                /* Name you’ll use in font-family */
+    src: url("fonts/Magnific.ttf") format("truetype");  /* Path to your font file */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lobster";                /* Name you’ll use in font-family */
+    src: url("fonts/Lobster.ttf") format("truetype");  /* Path to your font file */
+    font-weight: normal;
+    font-style: normal;
+}

@@ -26,7 +26,15 @@
     </div>
     </div>
     <div class="Breadcrumb"></div>
-    <div class="MainContent"></div>
+    <div class="MainContent">
+        <!-- WhatsApp Click-to-Chat Button -->
+        <div id="whatsapp-button" style="position:fixed; bottom:20px; right:20px;">
+            <button style="background-color:#25D366; color:white; padding:12px 20px; 
+            border:none; border-radius:50px; font-weight:bold; cursor:pointer; 
+            box-shadow:0 4px 6px rgba(0,0,0,0.2);">WhatsApp Chat
+            </button>
+        </div>
+    </div>
     <div class="Footer">
         <p>© 2025 My Personal Website</p>
     </div>
@@ -38,6 +46,14 @@ const navLinks = document.getElementById("nav-links");
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show");
 });
+
+// WhatsApp Click-to-Chat functionality
+const phoneNumber = "1234567890"; // Your phone number
+const defaultMessage = "Hi! I'm interested in your leather products.";
+
+document.getElementById("whatsapp-button").onclick = function() {
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`, '_blank');
+};
 </script>
 </body>
 </html>

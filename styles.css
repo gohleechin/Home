@@ -157,6 +157,17 @@
     border-radius: 5px;
 }
 
+#toggleButton{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #1B5CDE;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .Footer{
     height: 50px;
     background-color: #65B3DE;

@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="preloader">
+    <section id="preloader">
         <div class="spinner"></div>
-    </div>
+    </section>
+
     <div class="Header">
         <h1>Welcome to My Personal Webpage</h1>
         <div class="LanguageSelector"> LANGUAGE:
@@ -20,16 +21,16 @@
     </div>
 
     <div class="NavBar">
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <div class="Nav-links" id="nav-links">
-        <a class="NavItem" href="index.html">Home</a>
-        <a class="NavItem" href="about.html">About Me</a>
-        <a class="NavItem" href="services.html">Services</a>
-        <a class="NavItem" href="contact.html">Contact</a>
-    </div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+            <div class="Nav-links" id="nav-links">
+            <a class="NavItem" href="index.html">Home</a>
+            <a class="NavItem" href="about.html">About Me</a>
+            <a class="NavItem" href="services.html">Services</a>
+            <a class="NavItem" href="contact.html">Contact</a>
+            </div>
     </div>
     <div class="Breadcrumb"></div>
-    <div class="MainContent">
+    <section class="MainContent">
         <div class="scroll-container">
             <div class="item">Box 1</div>
             <div class="item">Box 2</div>
@@ -38,7 +39,10 @@
             <div class="item">Box 5</div>
         </div>
 
-
+        <button id="toggleButton">OFF</button>
+        <div id="toggleContent" style="display:none; margin-top:10px;">
+            <p>This content is toggled by the button above.</p>
+        </div>
 
         <!-- WhatsApp Click-to-Chat Button -->
         <div id="whatsapp-button" style="position:fixed; bottom:20px; right:20px;">
@@ -47,21 +51,19 @@
             box-shadow:0 4px 6px rgba(0,0,0,0.2);">WhatsApp Chat
             </button>
         </div>
-    </div>
-    <div class="Footer">
+    </section>
+    <section class="Footer">
         <p>© 2025 My Personal Website</p>
-    </div>
+    </section>
 
 <script>
 // Preloader functionality
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
-    preloader.style.opacity = "0";
-
-    // optional fade out
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
+    //preloader.style.opacity = "0";
+        // optional fade out
+    setTimeout(() => {preloader.style.display = "none";
+    }, 500);  
 });
 
 // Responsive navigation menu toggle
@@ -70,6 +72,25 @@ const navLinks = document.getElementById("nav-links");
 
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show");
+});
+
+// Toggle button functionality
+const toggleButton = document.getElementById("toggleButton");
+const Content = document.getElementById("toggleContent");
+
+toggleButton.addEventListener("keydown", (event) => {
+    
+    if(event.key ==="Enter"){
+    alert("Enter key pressed");
+    if (Content.style.display === "none") {
+        Content.style.display = "block";
+        toggleButton.textContent = "ON";
+    } else {
+        Content.style.display = "none";
+        toggleButton.textContent = "OFF";
+    }
+}
+
 });
 
 // WhatsApp Click-to-Chat functionality
